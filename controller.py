@@ -31,8 +31,6 @@ class Controller:
         print("Controller started. Running at", self.target_hz, "Hz.")
         try:
             while self.running:
-                start_time = time.time()
-
                 if not self.planner.update():
                     self.running = False
                 self.navigator.update()
